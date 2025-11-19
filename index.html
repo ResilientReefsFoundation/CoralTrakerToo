@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coral Nursery Monitor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'sea-salt': '#F7FAFC',      // Light blue background
+            'deep-sea': '#2D3748',      // Dark text, was coral-dark
+            'ocean-blue': '#0077B6',    // Primary accent, was coral-blue
+            'seafoam-green': '#50E3C2', // Secondary accent, kept
+            'coral-pink': '#FF8C69',    // New warm accent
+            'coral-sand': '#FBF9F4',    // Keep for specific elements if needed
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #schedule-to-print, #schedule-to-print * {
+        visibility: visible;
+      }
+      #schedule-to-print {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+      }
+      button, header, aside, .print-hidden {
+          display: none !important;
+      }
+    }
+  </style>
+  <!-- 3D Model Viewer -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
+    "vite": "https://aistudiocdn.com/vite@^7.2.2",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-gradient-to-br from-blue-200 via-cyan-300 to-ocean-blue">
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
